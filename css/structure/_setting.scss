@@ -1,0 +1,39 @@
+$main-color  : #3CD3AD;
+$secondary-color  : #4CB8C4;
+$light-grey  : #8F8F8F;
+$dark-grey   : #707070;
+$white-color: #fff;
+$black-color : #181818;
+
+$spacing-unit: 5px;
+
+$g-margin: 20px;
+$g-padding: 20px;
+
+$bar-width  : 30px;
+$bar-height : 3px;
+$bar-spacing: 8px;
+
+%ease {
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition   : all .3s ease-in-out;
+    -o-transition     : all .3s ease-in-out;
+    transition        : all .3s ease-in-out;
+}
+
+%shadow {
+    -webkit-box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.13);
+    box-shadow        : 0px 1px 21px 0px rgba(0, 0, 0, 0.13);
+}
+
+%raduis {
+    border-radius        : 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius   : 50px;
+    -ms-border-radius    : 50px;
+    -o-border-radius     : 50px;
+}
+
+%bg-gradient {
+    background-image: linear-gradient(to right, #3CD3AD, #4CB8C4);
+}

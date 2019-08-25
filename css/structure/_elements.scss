@@ -1,0 +1,26 @@
+ul {
+    list-style: none;
+}
+
+p {
+    margin : 0px;
+    padding: 0px;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: bold;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+body {
+    font-family: sans-serif;
+    color      : $light-grey;
+    font-size  : 16px;
+    line-height: 28px;
+    overflow-x : hidden ;
+}

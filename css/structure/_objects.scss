@@ -1,0 +1,116 @@
+.list-inline,
+.list-unstyled {
+    margin : 0px;
+    padding: 0px;
+}
+
+a {
+
+    &:hover,
+    :focus {
+        text-decoration: none !important;
+        color          : inherit;
+    }
+}
+
+a,
+button {
+    text-decoration: none !important;
+    outline        : none !important;
+    @extend %ease;
+
+    &:focus {
+        outline: none !important;
+    }
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    outline           : none;
+    outline           : 0;
+    background        : transparent;
+    -webkit-box-shadow: none;
+    -o-box-shadow     : none !important;
+    -moz-box-shadow   : none !important;
+    box-shadow        : none !important;
+}
+
+input,
+.form-control,
+input:focus,
+.form-control:focus {
+    box-shadow        : none;
+    -webkit-transition: none;
+    -o-transition     : none;
+    outline           : none;
+}
+
+.form-control:disabled,
+.form-control[readonly] {
+    background-color: transparent;
+    opacity         : 1;
+}
+
+input input[type="date"].form-control:invalid {
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+    color: $white-color;
+    font-weight        : 700;
+    height             : $spacing-unit*11;
+    padding            : $spacing-unit*2 $spacing-unit*7;
+    font-size          : 18px;
+    border             : 1px solid transparent;
+    width              : 100%;
+    text-transform     : capitalize;
+    margin-top: $g-margin;
+
+    &:hover,
+    &:focus {
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.13);
+        color: $black-color;
+    }
+}
+
+.form-group {
+    position     : relative;
+    margin-bottom: $g-margin;
+}
+
+.form-control {
+    background-color: transparent;
+    height          : $spacing-unit*11;
+    padding         : $g-padding 0 0px;
+    color           : $black-color;
+    font-size       : 16px;
+    border          : none;
+    border-bottom   : 2px solid rgba(0, 0, 0, 0.2);
+    border-radius   : 0px;
+    @extend %ease;
+
+    &:not(.input-not-empty) .form-control:not(:focus) {
+        color: transparent;
+    }
+
+
+}
+
+select {
+    &.form-control {
+        -webkit-appearance: none;
+        -moz-appearance   : none;
+        appearance        : none;
+    }
+}
+
+.animated {
+    -webkit-animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+}

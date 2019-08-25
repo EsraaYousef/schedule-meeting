@@ -1,0 +1,299 @@
+header {
+    background-image   : url('../img/bg/main-slider.png');
+    background-size    : cover;
+    background-position: center;
+    min-height         : 100vh;
+}
+
+.navbar-light {
+
+    .navbar-brand {
+        margin: 0;
+
+        img {
+            width: 100px
+        }
+    }
+
+    .navbar-nav {
+        width          : 80%;
+        margin         : auto;
+        justify-content: space-between;
+
+        .nav-item {
+
+            .nav-link {
+                position : relative;
+                font-size: 20px;
+                color    : $white-color;
+
+                &:hover {
+                    color: $main-color;
+                }
+            }
+
+
+            &.active>.nav-link,
+            .nav-link.active,
+            .nav-link.show,
+            .show>.nav-link {
+                position: relative;
+            }
+        }
+    }
+
+
+    &.fixed-top {
+        position        : fixed;
+        background-color: $white-color;
+        z-index         : 9;
+        @extend %shadow;
+
+        .navbar-brand {
+            img {
+                width: 80px
+            }
+        }
+
+
+        .navbar-nav {
+            .nav-item {
+                .nav-link {
+                    color: $main-color;
+
+                    &:hover {
+                        color: $secondary-color;
+                    }
+                }
+
+
+                &.active>.nav-link,
+                .nav-link.active,
+                .nav-link.show,
+                .show>.nav-link {
+                    position: relative;
+                }
+            }
+        }
+    }
+
+    .register-block {
+        .btn {
+            &.register {
+                margin-top: 0;
+                color     : $white-color;
+                @extend %bg-gradient;
+                height: auto;
+
+                &.profile {
+                    width    : 48px;
+                    font-size: 22px;
+                    padding  : 5px 10px;
+                }
+            }
+
+            &.reverse {
+                background-image: none;
+                color           : $main-color;
+                padding         : 0px 10px;
+                font-size       : 22px;
+                margin          : 0 15px 0;
+                width           : 48px;
+                line-height     : 48px;
+            }
+        }
+    }
+}
+
+.main-content {
+    margin-top: $g-margin * 5;
+
+    .booking-info {
+        margin-top: $g-margin * 4;
+
+        h1 {
+            font-size     : 52px;
+            text-transform: uppercase;
+            color         : $black-color;
+            font-weight   : 700;
+            text-shadow   : 2px 2px $dark-grey;
+        }
+
+        p {
+            font-size  : 20px;
+            color      : $dark-grey;
+            text-shadow: 0px 1px $dark-grey;
+        }
+    }
+
+    .booking-form {
+        background: $white-color;
+        max-width : 642px;
+        width     : 100%;
+        margin    : auto;
+        padding   : $g-padding*2 $g-padding*1.5;
+        @extend %shadow;
+
+        .form-group{
+            .form-label {
+                color             : rgba(0, 0, 0, 0.2);
+                font-weight       : 700;
+                position          : absolute;
+                top               : 20px;
+                left              : 0px;
+                text-transform    : uppercase;
+                line-height       : 24px;
+                height            : 23px;
+                font-size         : 16px;
+                pointer-events    : none;
+                -webkit-transition: 0.2s all;
+                transition        : 0.2s all;
+            }
+
+            .form-control{
+                &:focus{
+                    +{
+                        .form-label {
+                            top      : 0px;
+                            color    : $main-color;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+            
+            .select-arrow {
+                position      : absolute;
+                right         : 0px;
+                bottom        : 7px;
+                width         : 32px;
+                line-height   : 32px;
+                height        : 32px;
+                text-align    : center;
+                pointer-events: none;
+                color         : rgba(0, 0, 0, 0.2);
+                font-size     : 14px;
+                cursor: pointer;
+            }
+
+            &.input-not-empty {
+                .form-label {
+                    top      : 0px;
+                    color    : $main-color;
+                    font-size: 14px;
+                }
+            }
+        }
+        
+        .btn{
+            &.btn-submit {
+                @extend %bg-gradient;
+            }
+            &.btn-danger{
+                border-color: #bd2130;
+
+                &:hover, &:focus{
+                    border-color: #bd2130;
+                }
+            }
+        }
+    }
+}
+
+.mdtp__wrapper[data-theme=blue] .mdtp__clock .mdtp__am.active, 
+.mdtp__wrapper[data-theme=blue] .mdtp__clock .mdtp__clock_dot, 
+.mdtp__wrapper[data-theme=blue] .mdtp__clock .mdtp__pm.active, 
+.mdtp__wrapper[data-theme=blue] .mdtp__time_holder{
+    background-color: transparent;
+    @extend %bg-gradient;
+}
+.mdtp__wrapper[data-theme=blue] .mdtp__clock .mdtp__digit span:hover, 
+.mdtp__wrapper[data-theme=blue] .mdtp__digit.active span, 
+.mdtp__wrapper[data-theme=blue] .mdtp__digit.active:before{
+    background-color: $main-color !important;
+}
+
+.mdtp__button, 
+.mdtp__wrapper[data-theme=blue] .mdtp__button{
+    color: $main-color;
+    &:hover{
+        background-color: transparent;
+        color: $dark-grey;
+    }
+}
+
+.loading-window{
+    position: fixed;
+    
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+.lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 90px;
+    height: 70px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    div {
+        position: absolute;
+        top: 27px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        @extend %bg-gradient;
+        animation-timing-function: cubic-bezier(0, 1, 1, 0);
+
+        &:nth-child(1) {
+            left: 15px;
+            animation: lds-ellipsis1 0.6s infinite;
+          }
+
+          &:nth-child(2) {
+            left: 20px;
+            animation: lds-ellipsis2 0.6s infinite;
+          }
+
+          &:nth-child(3) {
+            left: 45px;
+            animation: lds-ellipsis2 0.6s infinite;
+          }
+
+          &:nth-child(4) {
+            left: 55px;
+            animation: lds-ellipsis3 0.6s infinite;
+          }
+      }
+  }
+}
+
+  
+  @keyframes lds-ellipsis1 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes lds-ellipsis3 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  @keyframes lds-ellipsis2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(19px, 0);
+    }
+  }
+  

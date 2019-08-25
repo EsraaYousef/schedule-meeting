@@ -1,0 +1,246 @@
+@media (max-width: 992px) {
+
+    .form-control{
+        height: 50px;
+        padding: $g-padding*3/4 0 0px;
+        font-size: 14px;
+    }
+    .btn{
+        font-size: 16px;
+    }
+
+    .navbar-light {
+        position: relative;
+
+        .navbar-toggler {
+            position: relative;
+            width   : 40px;
+            height  : 40px;
+            border  : 0;
+        }
+
+        .menu-wrapper {
+            height       : $bar-height + $bar-spacing*2;
+            cursor       : pointer;
+            margin-bottom: 10px;
+            padding: 5px 0;
+        }
+
+        .hamburger-menu,
+        .hamburger-menu:after,
+        .hamburger-menu:before {
+            width : $bar-width;
+            height: $bar-height;
+        }
+
+        .hamburger-menu {
+            position     : relative;
+            transform    : translateY($bar-spacing);
+            background   : $main-color;
+            transition   : all 0ms 300ms;
+            display      : block;
+            margin-bottom: 15px;
+            z-index      : 9;
+
+            &.animate {
+                background: transparent;
+            }
+        }
+
+        .hamburger-menu:before {
+            content   : "";
+            position  : absolute;
+            left      : 0;
+            bottom    : $bar-spacing;
+            background: $main-color;
+            transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .hamburger-menu:after {
+            content           : "";
+            position          : absolute;
+            left              : 0;
+            top               : $bar-spacing;
+            background        : $main-color;
+            transition        : top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+            -webkit-transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+            -moz-transition   : top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+            -ms-transition    : top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+            -o-transition     : top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .hamburger-menu.animate:after {
+            top              : 0;
+            transform        : rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            -moz-transform   : rotate(-45deg);
+            -ms-transform    : rotate(-45deg);
+            -o-transform     : rotate(-45deg);
+            transition       : top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .hamburger-menu.animate:before {
+            bottom           : 0;
+            transform        : rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            -moz-transform   : rotate(45deg);
+            -ms-transform    : rotate(45deg);
+            -o-transform     : rotate(45deg);
+            transition       : bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .navbar-collapse {
+            -webkit-box-shadow    : 0px 0px 65px 0px rgba(0, 0, 0, 0.06);
+            box-shadow            : 0px 0px 65px 0px rgba(0, 0, 0, 0.06);
+            -webkit-transition    : all 0.5s ease-in-out;
+            -moz-transition       : all 0.5s ease-in-out;
+            -o-transition         : all 0.5s ease-in-out;
+            transition            : all 0.5s ease-in-out;
+            -ms-transition        : all 0.5s ease-in-out;
+            transform-origin      : right;
+            position              : fixed;
+            right                 : -100%;
+            top                   : 0;
+            background-color      : $white-color;
+            width                 : 80%;
+            height                : 100%;
+            z-index               : 9;
+            padding               : 20px 15px;
+            -webkit-animation-name: slideInRight;
+            animation-name        : slideInRight;
+
+            &.show {
+                right      : 0;
+                padding-top: 60px;
+
+                .navbar-nav {
+                    text-align: center;
+
+                    .nav-item {
+                        margin-bottom: 15px;
+                        .nav-link{
+                            color: $main-color;
+
+                            &:hover{
+                                color: $secondary-color;
+                            }
+                        }
+
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+
+                        &.hide-mob {
+                            display: inline-block;
+                        }
+
+                        .nav-link {
+                            &.active {
+                                &:after {
+                                    width: 45%;
+                                }
+                            }
+
+                            &:after {
+                                bottom: -10px;
+                            }
+
+                            &:hover {
+                                &:after {
+                                    width: 45%;
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+
+        .navbar-brand {
+            img {
+                width: 60px;
+            }
+        }
+
+        &.fixed-top{
+            padding-top: 20px;
+            .navbar-brand {
+                img {
+                    width: 60px;
+                }
+            }
+        }
+
+        .register-block {
+            li {
+                display: inline-block;
+    
+                .btn {
+                    &.register {
+    
+                        &.profile {
+                            width    : 38px;
+                            height: 38px;
+                            font-size: 18px;
+                            padding  : 4px 7px;
+                        }
+                    }
+    
+                    &.reverse {
+                        background-image: none;
+                        color           : $main-color;
+                        padding         : 0px 10px;
+                        font-size       : 22px;
+                        margin          : 0 15px 0;
+                        width           : 48px;
+                        line-height     : 48px;
+                    }
+                }
+            }
+        }
+    }
+
+    .main-content {
+        .booking-info {
+            h1{
+                font-size: 38px;
+            }
+            p {
+                font-size: 16px;
+                line-height: 24px;
+            }
+        }
+
+        .booking-form{
+            padding   : $g-padding $g-padding*.75;
+
+            .form-group {
+                margin-bottom: $spacing-unit*3;
+
+                .form-label {
+                    top: 15px;
+                    line-height: 19px;
+                    height: 19px;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px){
+    .main-content {
+        margin: 0;
+
+        .booking-info{
+            margin: $g-margin 0;
+            text-align: center;
+
+            h1{
+                font-size: 24px;
+                text-shadow: 1px 1px $dark-grey;
+            }
+        }
+    }
+}
